@@ -79,7 +79,7 @@ end
 function neotest.run.run(args)
   local tree = neotest.run.get_tree_from_args(args, true)
   if not tree then
-    lib.notify("No tests found")
+    lib.notify("No tests found", vim.log.levels.INFO)
     return
   end
   client:run_tree(tree, augment_args(tree, args))
